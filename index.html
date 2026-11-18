@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de Assinaturas - Herboflora</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>Gerador de Assinaturas Corporativas</h1>
+            <p>Padrão Herboflora</p>
+        </div>
+    </header>
+    
+    <main class="container">
+        <section class="form-section">
+            <h2>Dados do Colaborador</h2>
+            <p class="subtitle">Preencha os dados e ajuste o visual.</p>
+            <form id="sig-form">
+                <div class="form-group">
+                    <label>Nome Completo</label>
+                    <input type="text" id="input-nome" value="Guilherme Henrique" />
+                </div>
+                <div class="form-group">
+                    <label>Cargo / Função</label>
+                    <input type="text" id="input-cargo" value="Assistente de Sistema" />
+                </div>
+                <div class="form-group">
+                    <label>Telefone / Ramal</label>
+                    <input type="text" id="input-telefone" value="(35) 3295-6330" placeholder="Deixe em branco para ocultar" />
+                </div>
+                <div class="form-group">
+                    <label>E-mail Corporativo</label>
+                    <input type="email" id="input-email" value="guilhermehenrique@herboflora.com.br" placeholder="Deixe em branco para ocultar" />
+                </div>
+                <div class="form-group">
+                    <label>Site</label>
+                    <input type="text" id="input-site" value="www.herboflora.com.br" placeholder="Deixe em branco para ocultar" />
+                </div>
+                <div class="form-group">
+                    <label>Endereço</label>
+                    <textarea id="input-endereco" rows="2" placeholder="Deixe em branco para ocultar">Av. Filhas de Sant'Ana, 3015 - Distrito Industrial&#10;Machado / MG</textarea>
+                </div>
+
+                <!-- NOVOS CONTROLES DO EDITOR -->
+                <div style="border-top: 1px solid #ddd; margin-top: 20px; padding-top: 15px;">
+                    <h3 style="font-size: 14px; color: #1E5128; margin-bottom: 15px;">Ajustes Visuais</h3>
+                    
+                    <div class="form-group">
+                        <label style="display: flex; justify-content: space-between;">
+                            <span>Tamanho da Logo (Largura)</span>
+                            <span id="display-logo-size" style="color: #1E5128; font-weight: bold;">140px</span>
+                        </label>
+                        <input type="range" id="input-logo-size" min="50" max="200" value="140" step="5" style="width: 100%; cursor: pointer;">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label style="display: flex; justify-content: space-between;">
+                            <span>Tamanho da Fonte (Nome)</span>
+                            <span id="display-font-size" style="color: #1E5128; font-weight: bold;">19px</span>
+                        </label>
+                        <input type="range" id="input-font-size" min="12" max="30" value="19" step="1" style="width: 100%; cursor: pointer;">
+                    </div>
+                </div>
+            </form>
+        </section>
+        
+        <section class="preview-section">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; border-bottom: 2px solid #F4F6F4; padding-bottom: 10px;">
+                <h2 id="preview-title" style="margin: 0; border: none; padding: 0;">Pré-visualização da Assinatura</h2>
+                <button id="btn-toggle-gallery" style="padding: 8px 15px; background: #4E9F3D; color: #fff; border: none; border-radius: 4px; cursor: pointer; font-weight: bold; font-size: 13px; transition: background 0.3s;">Ver Todos os Modelos</button>
+            </div>
+            
+            <!-- Visualização Única (Padrão) -->
+            <div id="preview-container"></div>
+            
+            <!-- Galeria de Modelos (Oculto por padrão) -->
+            <div id="gallery-container"></div>
+            
+            <div class="instructions">
+                <strong>Como colocar no Outlook:</strong><br>
+                1. Clique em "Copiar Assinatura (Para Outlook)".<br>
+                2. Cole (Ctrl+V) no painel de assinaturas do Outlook.<br>
+                3. Apague a caixa da logo e insira a logo oficial branca usando a ferramenta de imagem do Outlook.
+            </div>
+            
+            <div class="actions">
+                <button id="btn-copy">Copiar Assinatura (Para Outlook)</button>
+                <button id="btn-download">Baixar arquivo HTML</button>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
